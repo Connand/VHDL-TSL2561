@@ -16,6 +16,7 @@ entity TSL2561 is
 			test_400:out std_logic;
 			test_count:out integer;
 			state_count:out integer;
+			test_read:out std_logic_vector(7 downto 0);
 			act_done:out std_logic;
 			SCL:inout std_logic;
 			SDA:inout std_logic
@@ -92,7 +93,7 @@ begin
 		end if;
 	end process;
 	
-	
+	test_read<=data_read;
 	test_800<=I2CCLK;
 	test_400<=SCLs;
 	test_count<=data_count;
